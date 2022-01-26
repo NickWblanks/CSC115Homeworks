@@ -49,6 +49,58 @@ TEST_CASE( "toupper - Testing random lowercase letter t")
     char achar = 't';
     char result;
     
-    result = char( toupper( achar ))
+    result = char( toupper( achar ));
     REQUIRE( result == 'T' );
 }
+
+
+TEST_CASE( "islower - Testing lower boundary of a")
+{
+    
+    char ch = 'a';
+    bool result;
+    result = islower( ch );
+    REQUIRE( result != false);
+}
+
+
+TEST_CASE( "islower - Testing upper boundary of z")
+{
+    
+    char ch = 'z';
+    bool result;
+    result = islower( ch );
+    REQUIRE( result == true);
+}
+
+
+TEST_CASE( "islower - Testing uppercase boundary A")
+{
+    char ch = 'A';
+    bool result;
+    result = islower( ch );
+    REQUIRE( result == false);
+}
+
+
+TEST_CASE( "islower - Testing uppercase boundary Z")
+{
+    char ch = 'Z';
+    bool result;
+    result = islower( ch );
+    REQUIRE( result != true);
+}
+
+
+TEST_CASE( "islower - random uppercase letter")
+{
+    char ch = 'S';
+    bool result;
+    result = islower( ch );
+    REQUIRE( result == false);
+}
+
+
+
+
+
