@@ -101,6 +101,43 @@ TEST_CASE( "islower - random uppercase letter")
 }
 
 
+TEST_CASE( "isdigit - Lower boundary of 0")
+{
+    char ch = '0';
+    bool result;
+    result = isdigit( ch );
+    REQUIRE( result == true);
+}
+
+
+TEST_CASE( "isdigit - upper boundary of 9")
+{
+    char ch = '9';
+    bool result;
+    result = isdigit( ch );
+    REQUIRE( result != false);
+}
+
+
+TEST_CASE( "isdigit - trying a letter")
+{
+    char ch = 'H';
+    bool result;
+    result = isdigit( ch );
+    REQUIRE( result == false);
+}
+
+
+TEST_CASE( "isdigit - trying a non-number, non-letter")
+{
+    char ch = '?';
+    bool result;
+    result = isdigit( ch );
+    REQUIRE( result != true);
+}
+
+
+
 
 
 
