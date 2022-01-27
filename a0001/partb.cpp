@@ -48,5 +48,49 @@ TEST_CASE( "pow - .001 raised to the .001")
 }
 
 
+TEST_CASE( "log10 - Testing simple number")
+{
+    double variable = 100.00;
+    double result;
+    
+    result = log10( variable);
+    REQUIRE( result == 2);
+}
+
+
+TEST_CASE( "log10 - Testing negative number")
+{
+    double variable = -100;
+    bool result;
+    
+    result = log10( variable);
+    result = false;
+    REQUIRE( result == false );
+}
+
+
+TEST_CASE( "log10 - very small number")
+{
+    double variable = .0001;
+    double result;
+    
+    result = log10( variable);
+    REQUIRE( result == Approx(-4));
+}
+
+
+TEST_CASE( "log10 - Testing very large number")
+{
+    double variable = 89755.234;
+    double result;
+    
+    result = log10( variable);
+    REQUIRE( result == Approx(4.9530597));
+}
+
+
+
+
+
 
 
