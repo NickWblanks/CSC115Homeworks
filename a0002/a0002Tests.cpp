@@ -121,6 +121,28 @@ TEST_CASE( "windChillWarning - intermediate, < -20")
 }
 
 
+TEST_CASE( "windChillWarning - Extreme, < -40")
+{
+    int Atemp = -20;
+    int wind = 20;
+    string warning;
+    
+    warning = windChillWarning( Atemp, wind);
+    REQUIRE( warning == "Extreme");
+}
+
+
+TEST_CASE( "windChillWarning - Extreme, way too cold!")
+{
+    int Atemp = -70;
+    int wind = 55;
+    string warning;
+    
+    warning = windChillWarning( Atemp, wind);
+    REQUIRE( warning == "Extreme");
+}
+
+
 
 
 

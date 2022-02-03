@@ -29,7 +29,8 @@ string windChillWarning( int Atemp, int wind )
     {
         return "Intermediate";
     }
-        
+    
+    return "Extreme";   
 }
 
 
