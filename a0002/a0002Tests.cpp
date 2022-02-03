@@ -55,6 +55,54 @@ TEST_CASE( "windChillWarning - testing none")
     REQUIRE( warning == "None");
 }
 
+
+TEST_CASE( "windChillWarning - minimal, >=0")
+{
+    int Atemp = 15;
+    int wind = 15;
+    string warning;
+    
+    warning = windChillWarning( Atemp, wind);
+    REQUIRE( warning == "Minimal");
+}
+
+
+TEST_CASE( "windChillWarning - minimal, <32")
+{
+    int Atemp = 44;
+    int wind = 50;
+    string warning;
+    
+    warning = windChillWarning( Atemp, wind);
+    REQUIRE( warning == "Minimal");
+}
+
+
+TEST_CASE( "windChillWarning - Caution, >=-20")
+{
+    int Atemp = 8;
+    int wind = 51;
+    string warning;
+    
+    warning = windChillWarning( Atemp, wind);
+    REQUIRE( warning == "Caution");
+}
+
+
+TEST_CASE( "windChillWarning - Caution, <0")
+{
+    int Atemp = 13;
+    int wind = 12;
+    string warning;
+    
+    warning = windChillWarning( Atemp, wind);
+    REQUIRE( warning == "Caution");
+}
+
+
+
+
+
     
 
 
