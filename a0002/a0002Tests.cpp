@@ -100,6 +100,29 @@ TEST_CASE( "windChillWarning - Caution, <0")
 }
 
 
+TEST_CASE( "windChillWarning - intermediate, >=-40")
+{
+    int Atemp = -20;
+    int wind = 9;
+    string warning;
+    
+    warning = windChillWarning( Atemp, wind);
+    REQUIRE( warning == "Intermediate");
+}
+
+TEST_CASE( "windChillWarning - intermediate, < -20")
+{
+    int Atemp = 0;
+    int wind = 18;
+    string warning;
+    
+    warning = windChillWarning( Atemp, wind);
+    REQUIRE( warning == "Intermediate");
+}
+
+
+
+
 
 
 

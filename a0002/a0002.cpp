@@ -25,7 +25,11 @@ string windChillWarning( int Atemp, int wind )
     {
         return "Caution";
     }
-    
+    if(windChillWarning >= -40)
+    {
+        return "Intermediate";
+    }
+        
 }
 
 
