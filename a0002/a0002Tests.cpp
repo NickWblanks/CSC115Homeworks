@@ -45,6 +45,21 @@ TEST_CASE( "wind_chill - testing high temp low wind, Atemp(49), wind(4)")
 }
 
 
+TEST_CASE( "windChillWarning - testing none")
+{
+    int Atemp = 49;
+    int wind = 4;
+    string warning;
+    
+    warning = windChillWarning( Atemp, wind);
+    REQUIRE( warning == "None");
+}
+
+    
+
+
+
+
 
 
     

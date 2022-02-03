@@ -8,3 +8,20 @@ int wind_chill( int Atemp, int wind )
 }
 
 
+
+
+string windChillWarning( int Atemp, int wind )
+{
+    int windChillWarning = wind_chill( Atemp, wind );
+    if( windChillWarning >= 32)
+        return "None";
+}
+
+
+    
+    
+
+
+
+
+
