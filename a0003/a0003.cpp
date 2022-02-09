@@ -11,6 +11,7 @@ int countCharacters( string test, char ch)
     while( n < length)
     {
         extract = test.at(n);
+        extract = char( tolower( extract));
         if( ch == extract)
         {
             count++;
