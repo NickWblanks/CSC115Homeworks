@@ -51,6 +51,18 @@ TEST_CASE( "countCharacters - Testing blank space at end of string")
     REQUIRE( count == 4);
 }
 
+
+TEST_CASE( "countCharacters - testing letter with different character.")
+{
+    string test = "B";
+    int count;
+    char ch = 't';
+    count = countCharacters( test, ch);
+    REQUIRE( count == 0);
+}
+
+
+
     
 TEST_CASE( "countCharacters - Testing the final boss of strings, checking if it all works")
 {
@@ -60,3 +72,14 @@ TEST_CASE( "countCharacters - Testing the final boss of strings, checking if it 
     count = countCharacters( test, ch);
     REQUIRE( count == 20);
 }
+
+
+TEST_CASE( "countCharacters - Testing Uppercase letter as argument.")
+{
+    string test = "a";
+    int count;
+    char ch = 'A';
+    count = countCharacters( test, ch);
+    REQUIRE( count == 1);
+}
+

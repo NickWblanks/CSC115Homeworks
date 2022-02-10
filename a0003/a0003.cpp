@@ -10,19 +10,33 @@ int countCharacters( string test, char ch)
     
     while( n < length)
     {
-        extract = test.at(n);
-        extract = char( tolower( extract));
-        if( ch == extract)
+    
+        if( islower( ch))
         {
-            count++;
+            extract = test.at(n);
+            extract = char( tolower( extract));
+            if( ch == extract)
+            {
+                count++;
+            }
+        }
+        if( isupper( ch))
+        {
+            extract = test.at(n);
+            extract = char( toupper( extract));
+            if( ch == extract)
+            {
+                count++;
+            }
         }
         n++;
     }
-        
-    
-    
     return count;
 }
+        
+        
+    
+
 
 
         
