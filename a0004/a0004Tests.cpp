@@ -44,3 +44,12 @@ TEST_CASE( "Testing 1, is not prime")
     result = isPrime( num);
     REQUIRE( result == false);
 }
+
+
+TEST_CASE( "Testing nextPrime, 3 next is 5")
+{
+    int num = 3;
+    int result;
+    result = nextPrime( num);
+    REQUIRE( result == 5);
+}

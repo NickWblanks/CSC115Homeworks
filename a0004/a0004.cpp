@@ -33,6 +33,25 @@ bool isPrime( int num)
 }
 
 
+int nextPrime( int num)
+{
+    bool nextPrime = isPrime( num);
+    if( nextPrime == true)
+    {
+        num = num + 2;
+        if( nextPrime == true)
+        {
+            return num;
+        }
+        
+    }
+    return false;
+}
+    
+    
+    
+
+
     
     
 
