@@ -4,55 +4,52 @@
 bool isPrime( int num)
 {
    int i;
-   i = 2;
+   i = 3;
    
    if( num < 2)
    {
        return false;
    }
-   while( i <= 9)
+   
+   if( num !=2 && num%2 == 0)
+   {
+       return false;
+   }
+      
+   while( i < num)
    {
        if( num % i == 0)
        {
-           if( num == 2)
-           {
-               i++;
-               return true;
-           }
-           
-           i++;
-           return false;
-           
+           return false;          
        }
        
-       i++;
-       return true;
-       
+       i+=2;     
    }   
-   return false;
+   return true;
 }
 
 
 int nextPrime( int num)
 {
-    bool nextPrime = isPrime( num);
-    if( nextPrime == true)
+    
+    int nextP = num + 2;
+    bool ans;
+    if( num <= 2)
     {
-        num = num + 2;
-        if( nextPrime == true)
-        {
-            return num;
-        }
-        
+        return 3;
     }
-    return false;
+        
+    
+    ans = isPrime( nextP);
+    while( ans != true)
+    {
+        nextP += 2;
+        ans = isPrime( nextP );
+    }
+    
+    return nextP;
 }
-    
-    
-    
 
-
-    
-    
-
-
+        
+        
+        
