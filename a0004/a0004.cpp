@@ -50,6 +50,18 @@ int nextPrime( int num)
     return nextP;
 }
 
+
+
+bool isTwinPrime( int num)
+{
+    bool ans;
+    ans = isPrime( num);
+    if( ans == false)
+    {
+        return false;
+    }
+}
+
         
         
         

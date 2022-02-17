@@ -127,3 +127,26 @@ TEST_CASE( "nextPrime - (-5)")
     result = nextPrime( num);
     REQUIRE( result == 3);
 }
+
+
+
+
+TEST_CASE( "isTwinPrime - 3, true")
+{
+    int num = 3;
+    bool result;
+    result = isTwinPrime( num);
+    REQUIRE( result == true);
+}
+
+TEST_CASE( "isTwinPrime - 4, false")
+{
+    int num = 4;
+    bool result;
+    result = isTwinPrime( num);
+    REQUIRE( result == false);
+}
+
+
+
+
