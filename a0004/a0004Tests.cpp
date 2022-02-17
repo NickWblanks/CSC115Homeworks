@@ -148,5 +148,58 @@ TEST_CASE( "isTwinPrime - 4, false")
 }
 
 
+TEST_CASE( "isTwinPrime - 23, false")
+{
+    int num = 23;
+    bool result;
+    result = isTwinPrime( num);
+    REQUIRE( result == false);
+}
+
+
+TEST_CASE( "isTwinPrime - 2, false")
+{
+    int num = 2;
+    bool result;
+    result = isTwinPrime( num);
+    REQUIRE( result == false);
+}
+
+
+TEST_CASE( "isTwinPrime - 43, true")
+{
+    int num = 43;
+    bool result;
+    result = isTwinPrime( num);
+    REQUIRE( result == true);
+}
+
+TEST_CASE( "isTwinPrime - 0, false")
+{
+    int num = 0;
+    bool result;
+    result = isTwinPrime( num);
+    REQUIRE( result == false);
+}
+
+TEST_CASE( "isTwinPrime - (-50), false")
+{
+    int num = -50;
+    bool result;
+    result = isTwinPrime( num);
+    REQUIRE( result == false);
+}
+
+
+TEST_CASE( "isTwinPrime - 883, true")
+{
+    int num = 883;
+    bool result;
+    result = isTwinPrime( num);
+    REQUIRE( result == true);
+}
+
+
+
 
 

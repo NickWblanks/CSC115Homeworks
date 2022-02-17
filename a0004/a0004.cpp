@@ -54,14 +54,35 @@ int nextPrime( int num)
 
 bool isTwinPrime( int num)
 {
+    int i = num + 2 ;
+    int n = num - 2;
     bool ans;
     ans = isPrime( num);
     if( ans == false)
     {
         return false;
     }
-}
-
-        
-        
-        
+    if( ans == true)
+    {
+        ans = isPrime( i);
+        if( ans == true)
+        {
+            return ans;
+        }     
+        if(ans == false)
+        {
+            ans = isPrime( num);
+            if( ans == true)
+            {
+                ans = isPrime( n);
+            }
+            if( ans == true)
+            {
+                return ans;
+            }
+            return false;
+        }
+        return false;
+    }
+    return false;
+} 
