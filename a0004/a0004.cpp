@@ -32,19 +32,41 @@ bool isPrime( int num)
 int nextPrime( int num)
 {
     
-    int nextP = num + 2;
+    int nextP = num;
+    int shortP = num;
     bool ans;
-    if( num <= 2)
+    
+    if( num < 2)
+    {
+        return 2;
+    }
+    if(num == 2)
     {
         return 3;
     }
+    if( num % 2 == 0)
+    {
+        shortP += 1;
+        ans = isPrime( shortP);
+        while( ans != true)
+        {
+            shortP += 2;
+            ans = isPrime( shortP);
+        }
         
+        return shortP;
+        
+    }
+    else
+    {
+        nextP += 2;
+        ans = isPrime( nextP);
+    }
     
-    ans = isPrime( nextP);
     while( ans != true)
     {
         nextP += 2;
-        ans = isPrime( nextP );
+        ans = isPrime( nextP);     
     }
     
     return nextP;

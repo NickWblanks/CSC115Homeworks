@@ -125,8 +125,25 @@ TEST_CASE( "nextPrime - (-5)")
     int num = -5;
     int result;
     result = nextPrime( num);
-    REQUIRE( result == 3);
+    REQUIRE( result == 2);
 }
+
+TEST_CASE( "nextPrime, 4 next is 5")
+{
+    int num = 4;
+    int result;
+    result = nextPrime( num);
+    REQUIRE( result == 5);
+}
+
+TEST_CASE( "nextPrime, 844 next is 853")
+{
+    int num = 844;
+    int result;
+    result = nextPrime( num);
+    REQUIRE( result == 853);
+}
+
 
 
 
