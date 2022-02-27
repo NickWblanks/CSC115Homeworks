@@ -3,7 +3,7 @@
 #include "a0005.h"
 
 
-TEST_CASE( "passwordCalc - all lowercase, 26")
+TEST_CASE( "characterPool - all lowercase, 26")
 {
     string passW = {"abcdefgh"};
     int total;
@@ -12,6 +12,7 @@ TEST_CASE( "passwordCalc - all lowercase, 26")
     total = characterPool( passW, size);
     CHECK( total == 26);
 }
+
 
 TEST_CASE( "characterPool - lower and upper case, 52")
 {
@@ -148,15 +149,14 @@ TEST_CASE( "passStrength - lower, very weak")
 }
 
 
+
+
 TEST_CASE( "passwordCalc - lowercase, 26, very weak")
 {
-    string passW = {"john"};
-    double entropy;
+    string passW = "john";
+    int entropy;
     string strength;
-    int size = 4;
-    entropy = passEntropy( passW, size);
-    strength = passStrength( passW, size);
-    passwordCalc( passW, size);
+    passwordCalc( passW, entropy, strength);
     CHECK( entropy == 19);
     CHECK( strength == "Very Weak");
 }
@@ -165,25 +165,20 @@ TEST_CASE( "passwordCalc - lowercase, 26, very weak")
 TEST_CASE( "passwordCalc - uppercase, 26, very weak")
 {
     string passW = {"JOSH"};
-    double entropy;
+    int entropy;
     string strength;
-    int size = 4;
-    entropy = passEntropy( passW, size);
-    strength = passStrength( passW, size);
-    passwordCalc( passW, size);
+    passwordCalc( passW, entropy, strength);
     CHECK( entropy == 19);
     CHECK( strength == "Very Weak");
 }
 
+
 TEST_CASE( "passwordCalc - mixed, 52, weak")
 {
     string passW = {"Tubes"};
-    double entropy;
+    int entropy;
     string strength;
-    int size = 5;
-    entropy = passEntropy( passW, size);
-    strength = passStrength( passW, size);
-    passwordCalc( passW, size);
+    passwordCalc( passW, entropy, strength );
     CHECK( entropy == 29);
     CHECK( strength == "Weak");
 }
@@ -192,12 +187,9 @@ TEST_CASE( "passwordCalc - mixed, 52, weak")
 TEST_CASE( "passwordCalc - mixed, 64, reasonable")
 {
     string passW = {"H a p1"};
-    double entropy;
+    int entropy;
     string strength;
-    int size = 6;
-    entropy = passEntropy( passW, size);
-    strength = passStrength( passW, size);
-    passwordCalc( passW, size);
+    passwordCalc( passW, entropy, strength);
     CHECK( entropy == 36);
     CHECK( strength == "Reasonable");
 }
@@ -205,12 +197,9 @@ TEST_CASE( "passwordCalc - mixed, 64, reasonable")
 TEST_CASE( "passwordCalc - mixed, 94, strong")
 {
     string passW = {"Huell1happy?"};
-    double entropy;
+    int entropy;
     string strength;
-    int size = 12;
-    entropy = passEntropy( passW, size);
-    strength = passStrength( passW, size);
-    passwordCalc( passW, size);
+    passwordCalc( passW, entropy, strength);
     CHECK( entropy == 79);
     CHECK( strength == "Strong");
 }
@@ -219,17 +208,12 @@ TEST_CASE( "passwordCalc - mixed, 94, strong")
 TEST_CASE( "passwordCalc - mixed, 96, very strong")
 {
     string passW = {"Huell1happy? ornothappy?"};
-    double entropy;
+    int entropy;
     string strength;
-    int size = 24;
-    entropy = passEntropy( passW, size);
-    strength = passStrength( passW, size);
-    passwordCalc( passW, size);
+    passwordCalc( passW, entropy, strength);
     CHECK( entropy == 158);
     CHECK( strength == "Very Strong");
 }
-    
-    
 
 
     

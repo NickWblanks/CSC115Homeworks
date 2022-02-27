@@ -6,9 +6,9 @@
 
 using namespace std;
 
-void passwordCalc( string pass, int size);
+void passwordCalc( string passW, int &entropy, string &strength);
 
-double passEntropy( string passW, int size);
+int passEntropy( string passW, int size );
 
 int characterPool( string passW, int size);
 

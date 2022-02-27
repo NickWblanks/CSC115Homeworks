@@ -1,14 +1,15 @@
 #include "a0005.h"
 
 
-void passwordCalc( string passW, int size)
+//void passwordCalc( string passW, int size)
+//{
+    
+//}
+void passwordCalc( string passW, int &entropy, string &strength)
 {
-    double entropy;
-    string strength;
-    entropy = passEntropy( passW, size);
-    strength = passStrength( passW, size);
+    entropy = passEntropy(passW, passW.size() );
+    strength = passStrength(passW, passW.size() );
 }
-
 
 
 
@@ -55,14 +56,14 @@ int characterPool( string passW, int size)
 }
 
 
-double passEntropy( string passW, int size)
+int passEntropy( string passW, int size)
 {
     double entbits;
     double ans;
-    double entropy;
+    int entropy;
     ans = characterPool( passW, size);
     entbits = log2( ans );
-    entropy = round( entbits * size);
+    entropy = int( round( entbits * size));
     
     return entropy;
 }
