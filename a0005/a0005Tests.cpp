@@ -148,6 +148,96 @@ TEST_CASE( "passStrength - lower, very weak")
 }
 
 
+TEST_CASE( "passwordCalc - lowercase, 26, very weak")
+{
+    string passW = {"john"};
+    double entropy;
+    string strength;
+    int size = 4;
+    entropy = passEntropy( passW, size);
+    strength = passStrength( passW, size);
+    passwordCalc( passW, size);
+    CHECK( entropy == 19);
+    CHECK( strength == "Very Weak");
+}
+
+
+TEST_CASE( "passwordCalc - uppercase, 26, very weak")
+{
+    string passW = {"JOSH"};
+    double entropy;
+    string strength;
+    int size = 4;
+    entropy = passEntropy( passW, size);
+    strength = passStrength( passW, size);
+    passwordCalc( passW, size);
+    CHECK( entropy == 19);
+    CHECK( strength == "Very Weak");
+}
+
+TEST_CASE( "passwordCalc - mixed, 52, weak")
+{
+    string passW = {"Tubes"};
+    double entropy;
+    string strength;
+    int size = 5;
+    entropy = passEntropy( passW, size);
+    strength = passStrength( passW, size);
+    passwordCalc( passW, size);
+    CHECK( entropy == 29);
+    CHECK( strength == "Weak");
+}
+
+
+TEST_CASE( "passwordCalc - mixed, 64, reasonable")
+{
+    string passW = {"H a p1"};
+    double entropy;
+    string strength;
+    int size = 6;
+    entropy = passEntropy( passW, size);
+    strength = passStrength( passW, size);
+    passwordCalc( passW, size);
+    CHECK( entropy == 36);
+    CHECK( strength == "Reasonable");
+}
+
+TEST_CASE( "passwordCalc - mixed, 94, strong")
+{
+    string passW = {"Huell1happy?"};
+    double entropy;
+    string strength;
+    int size = 12;
+    entropy = passEntropy( passW, size);
+    strength = passStrength( passW, size);
+    passwordCalc( passW, size);
+    CHECK( entropy == 79);
+    CHECK( strength == "Strong");
+}
+
+
+TEST_CASE( "passwordCalc - mixed, 96, very strong")
+{
+    string passW = {"Huell1happy? ornothappy?"};
+    double entropy;
+    string strength;
+    int size = 24;
+    entropy = passEntropy( passW, size);
+    strength = passStrength( passW, size);
+    passwordCalc( passW, size);
+    CHECK( entropy == 158);
+    CHECK( strength == "Very Strong");
+}
+    
+    
+
+
+    
+    
+    
+
+
+
 
 
 

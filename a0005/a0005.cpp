@@ -1,6 +1,19 @@
 #include "a0005.h"
 
 
+void passwordCalc( string passW, int size)
+{
+    double entropy;
+    string strength;
+    entropy = passEntropy( passW, size);
+    strength = passStrength( passW, size);
+}
+
+
+
+
+
+
 int characterPool( string passW, int size)
 {
     int lowPool = 0;
@@ -77,5 +90,5 @@ string passStrength( string passW, int size)
     {
         return "Very Strong";
     }
-    return "Null";
+    return "Nothing";
 }
