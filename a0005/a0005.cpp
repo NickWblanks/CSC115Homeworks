@@ -37,3 +37,16 @@ int characterPool( string passW, int size)
 }
 
 
+double passEntropy( string passW, int size)
+{
+    double entbits;
+    double ans;
+    double entropy;
+    ans = characterPool( passW, size);
+    entbits = log2( ans );
+    entropy = entbits * size;
+    
+    return entropy;
+    
+    
+}

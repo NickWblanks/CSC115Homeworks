@@ -43,6 +43,61 @@ TEST_CASE( "characterPool - lower, upper, digit, and punctuation, 94")
     total = characterPool( passW, size);
     CHECK( total == 94);
 }
+/*
+TEST_CASE( "entbits - case 1, 4.7")
+{
+    string passW = {"abcdefgh"};
+    double ans;
+    int size = 8;
+    ans = passEntropy( passW, size);
+    CHECK( ans == Approx(4.7004397));
+}
+
+TEST_CASE( "entbits - case 2, 5.700")
+{
+    string passW = {"AbcdefGh"};
+    double ans;
+    int size = 8;
+    ans = passEntropy( passW, size);
+    CHECK( ans == Approx(5.7004397));
+}
+*/
+
+TEST_CASE( "passEntropy - case 1, 26, 37.60351774")
+{
+    string passW = {"abcdefgh"};
+    double ans;
+    int size = 8;
+    ans = passEntropy( passW, size);
+    CHECK( ans == Approx(37.60351774));
+}
+
+TEST_CASE( "passEntropy - testcase 2, 52, 45.60351774")
+{
+    string passW = {"AbcdefGh"};
+    double ans;
+    int size = 8;
+    ans = passEntropy( passW, size);
+    CHECK( ans == Approx(45.60351774));
+}
+
+TEST_CASE( "passEntropy - testcase 3, 62, 53.58776679")
+{
+    string passW = {"AbcdefgH1"};
+    double ans;
+    int size = 9;
+    ans = passEntropy( passW, size);
+    CHECK( ans == Approx( 53.58776679));
+}
+
+
+    
+    
+
+    
+
+    
+
 
 
 
