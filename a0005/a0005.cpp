@@ -7,6 +7,7 @@ int characterPool( string passW, int size)
     int upperPool = 0;
     int digitPool = 0;
     int punctPool = 0;
+    int blankPool = 0;
     int total = 0;
     char ch;
     int i;
@@ -30,7 +31,11 @@ int characterPool( string passW, int size)
         {
             punctPool = 32;
         }
-        total = lowPool + upperPool + digitPool + punctPool;
+        if(isblank(ch))
+        {
+            blankPool = 2;
+        }
+        total = lowPool + upperPool + digitPool + punctPool + blankPool;
         
     }
     return total;
@@ -44,9 +49,33 @@ double passEntropy( string passW, int size)
     double entropy;
     ans = characterPool( passW, size);
     entbits = log2( ans );
-    entropy = entbits * size;
+    entropy = round( entbits * size);
     
     return entropy;
-    
-    
+}
+
+string passStrength( string passW, int size)
+{
+    double strength = passEntropy( passW, size);
+    if( strength <= 28)
+    {
+        return "Very Weak";
+    }
+    if( strength <= 35)
+    {
+        return "Weak";
+    }
+    if( strength <= 59)
+    {
+        return "Reasonable";
+    }
+    if( strength <= 127)
+    {
+        return "Strong";
+    }
+    if( strength > 127)
+    {
+        return "Very Strong";
+    }
+    return "Null";
 }

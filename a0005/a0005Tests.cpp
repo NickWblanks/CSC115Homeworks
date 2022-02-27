@@ -43,6 +43,17 @@ TEST_CASE( "characterPool - lower, upper, digit, and punctuation, 94")
     total = characterPool( passW, size);
     CHECK( total == 94);
 }
+
+TEST_CASE( "characterPool - lower, upper, digit, punct, and blank, 96")
+{
+    string passW = {"A big whal@ ate my dad2"};
+    int total;
+    int size;
+    size = 23;
+    total = characterPool( passW, size);
+    CHECK( total == 96);
+}
+
 /*
 TEST_CASE( "entbits - case 1, 4.7")
 {
@@ -69,7 +80,7 @@ TEST_CASE( "passEntropy - case 1, 26, 37.60351774")
     double ans;
     int size = 8;
     ans = passEntropy( passW, size);
-    CHECK( ans == Approx(37.60351774));
+    CHECK( ans == 38);
 }
 
 TEST_CASE( "passEntropy - testcase 2, 52, 45.60351774")
@@ -78,7 +89,7 @@ TEST_CASE( "passEntropy - testcase 2, 52, 45.60351774")
     double ans;
     int size = 8;
     ans = passEntropy( passW, size);
-    CHECK( ans == Approx(45.60351774));
+    CHECK( ans == 46);
 }
 
 TEST_CASE( "passEntropy - testcase 3, 62, 53.58776679")
@@ -87,8 +98,60 @@ TEST_CASE( "passEntropy - testcase 3, 62, 53.58776679")
     double ans;
     int size = 9;
     ans = passEntropy( passW, size);
-    CHECK( ans == Approx( 53.58776679));
+    CHECK( ans == 54);
 }
+
+TEST_CASE( "passStrength - all lower, 26, Reasonable")
+{
+    string passW = {"timissad"};
+    int size = 8;
+    string str;
+    str = passStrength( passW, size);
+    CHECK( str == "Reasonable");
+}
+
+TEST_CASE( "PassStrength - upper and lower, strong")
+{
+    string passW = {"Hopscotchtim"};
+    int size = 12;
+    string str;
+    str = passStrength( passW, size);
+    CHECK( str == "Strong");
+}
+
+TEST_CASE( "PassStrength - upper, lower, digits, strong")
+{
+    string passW = {"Crabcakes9000"};
+    int size = 13;
+    string str;
+    str = passStrength( passW, size);
+    CHECK( str == "Strong");
+}
+
+
+TEST_CASE( "passStrength - upper, lower, blanks, digits, and punct, very strong.")
+{
+    string passW = {"Mr. Krabs is a crab from a tv show"};
+    int size = 34;
+    string str;
+    str = passStrength( passW, size);
+    CHECK( str == "Very Strong");
+}
+
+TEST_CASE( "passStrength - lower, very weak")
+{
+    string passW = {"krab"};
+    int size = 4;
+    string str;
+    str = passStrength( passW, size);
+    CHECK( str == "Very Weak");
+}
+
+
+
+
+
+    
 
 
     
