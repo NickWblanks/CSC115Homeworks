@@ -82,6 +82,39 @@ TEST_CASE( "mostRolled - no duplicates, 6 is most rolled")
     CHECK( most == 6);
 }
 
+TEST_CASE( "mostRolled - no duplicates, 1 is most rolled")
+{
+    int most;
+    int dice[7];
+    int rolls[5] = { 1, 1, 1, 2, 3,};
+    createLookup( dice, rolls, 7);
+    most = mostRolled( dice, 7);
+    CHECK( most == 1);
+}
+
+
+TEST_CASE( "sumRolls - small set, to check if works")
+{
+    int sum;
+    int dice[7];
+    int rolls[4] = {2, 3, 4, 5};
+    createLookup( dice, rolls, 7);
+    sum = sumRolls( dice, 7);
+    CHECK( sum == 14);
+}
+
+
+TEST_CASE( "sumRolls - bigger set of numbers")
+{
+    int sum;
+    int dice[7];
+    int rolls[12] = {1, 2, 3, 4, 5, 6, 4, 4, 5, 2, 1, 1};
+    createLookup( dice, rolls, 7);
+    sum = sumRolls( dice, 7);
+    CHECK( sum == 38);
+}
+
+
 
 
 

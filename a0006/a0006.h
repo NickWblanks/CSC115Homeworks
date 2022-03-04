@@ -10,3 +10,4 @@ int fewestRolled( int dice[7], int size);
 
 int mostRolled( int dice[7], int size);
 
+int sumRolls( int dice[7], int size);
