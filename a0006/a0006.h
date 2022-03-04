@@ -4,3 +4,6 @@
 
 
 void createLookup( int dice[7], int rolls[], int size);
+
+
+int fewestRolled( int dice[7], int size);
