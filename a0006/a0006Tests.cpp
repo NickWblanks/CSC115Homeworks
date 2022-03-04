@@ -98,7 +98,7 @@ TEST_CASE( "sumRolls - small set, to check if works")
     int sum;
     int dice[7];
     int rolls[4] = {2, 3, 4, 5};
-    createLookup( dice, rolls, 7);
+    createLookup( dice, rolls, 4);
     sum = sumRolls( dice, 7);
     CHECK( sum == 14);
 }
@@ -109,10 +109,21 @@ TEST_CASE( "sumRolls - bigger set of numbers")
     int sum;
     int dice[7];
     int rolls[12] = {1, 2, 3, 4, 5, 6, 4, 4, 5, 2, 1, 1};
-    createLookup( dice, rolls, 7);
+    createLookup( dice, rolls, 12);
     sum = sumRolls( dice, 7);
     CHECK( sum == 38);
 }
+
+TEST_CASE( "sumRolls - all 1's")
+{
+    int sum;
+    int dice[7];
+    int rolls[6] = {1, 1, 1, 1, 1, 1};
+    createLookup( dice, rolls, 6);
+    sum = sumRolls( dice, 7);
+    CHECK( sum == 6);
+}
+
 
 
 

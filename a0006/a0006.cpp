@@ -71,14 +71,12 @@ int mostRolled( int dice[7], int size)
 int sumRolls( int dice[7], int size)
 {
     int i;
-    int sum = 0;
     int dicenum = 0;
-    for( i = 0; i < size - 1; i++)
+    for( i = 1; i < size; i++)
     {
         dicenum = (dice[i] * i) + dicenum;
     }
-    sum = dicenum;
-    return sum;
+    return dicenum;
 }
 
         
