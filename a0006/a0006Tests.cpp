@@ -57,8 +57,33 @@ TEST_CASE( "fewestRolled - noduplicates, 1 is least rolled")
     int rolls[7] = {1, 2, 2, 2, 4, 5, 6,};
     createLookup( dice, rolls, 7);
     few = fewestRolled( dice, 7);
-    CHECK( few == 3);
+    CHECK( few == 1);
 }
+
+TEST_CASE( "fewestRolled - duplicate, 2 and 3 are both least rolled, 2 should be ans")
+{
+    int few;
+    int dice[7];
+    int rolls[10] = {1, 1, 2, 3, 4, 4, 5, 6, 5, 6};
+    createLookup( dice, rolls, 7);
+    few = fewestRolled( dice, 7);
+    CHECK( few == 2);
+}
+
+    
+
+TEST_CASE( "mostRolled - no duplicates, 6 is most rolled")
+{
+    int most;
+    int dice[7];
+    int rolls[10] = { 1, 2, 3, 4, 5, 6, 6, 6, 6, 2,};
+    createLookup( dice, rolls, 7);
+    most = mostRolled( dice, 7);
+    CHECK( most == 6);
+}
+
+
+
 
 
     

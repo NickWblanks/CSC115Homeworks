@@ -51,3 +51,18 @@ int fewestRolled( int dice[7], int size)
     }
     return dicenum;
 }
+
+
+int mostRolled( int dice[7], int size)
+{
+    int dicenum = 1;
+    int i;
+    for( i = 1; i < size - 1; i++)
+    {
+        if( ( dice[dicenum] < dice[i + 1] ))
+        {
+            dicenum = i + 1;
+        }
+    }
+    return dicenum;
+}
