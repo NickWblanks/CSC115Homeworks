@@ -80,12 +80,25 @@ TEST_CASE( "getID - testing data not found, should return -1")
     REQUIRE( ID == -1);
 }
 
-TEST_CASE( "getName - testing data nout found should return -1")
+TEST_CASE( "getName - testing data nout found should return empty string")
 {
     int id[4] = {78, 59, 12, 34};
     string names[4] = {"Danny", "Sam", "Lilly", "Robert"};
     string person = getName( names, id, 4, 32);
     REQUIRE( person == "");
 }
+
+TEST_CASE( "getName - testing larger data set, checking bundaries")
+{
+    int id[7] = {107, 106, 105, 104, 103, 102, 101};
+    string names[7] = {"Mario", "Kirby", "Peach", "Snake", "Link", "Ganondorf", "Sonic"};
+    string person = getName( names, id, 7, 101);
+    CHECK( person == "Sonic");
+    CHECK( id[0] == 101);
+    CHECK( id[6] == 107);
+    CHECK( names[0] == "Sonic");
+    CHECK( names[6] == "Mario");
+}
+
 
 
