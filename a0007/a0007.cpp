@@ -1,7 +1,7 @@
 #include "a0007.h"
 
 
-void sortById( string names[], int id[], int size)
+void sortByID( string names[], int id[], int size)
 {
     int i;
     int j;
@@ -22,7 +22,7 @@ void sortById( string names[], int id[], int size)
 }
 
 
-void sortByNames( string names[], int id[], int size)
+void sortByName( string names[], int id[], int size)
 {    
     int i;
     int j;
