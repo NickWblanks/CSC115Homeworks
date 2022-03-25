@@ -50,3 +50,14 @@ TEST_CASE( "sortByName - testing larger set, checking uppercase")
     CHECK( id[8] == 2);
 }
 
+TEST_CASE( "getId - testing small set, checking if it works")
+{
+    int id[4] = {11, 22, 33, 44};
+    string names[4] = {"one", "two", "three", "four"};
+    int ID = getId( names, id, 4, "three");
+    CHECK( ID == 33);
+    CHECK( names[0] == "four");
+    CHECK( id[0] == 44);
+}
+
+

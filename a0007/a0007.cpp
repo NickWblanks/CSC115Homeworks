@@ -42,4 +42,22 @@ void sortByNames( string names[], int id[], int size)
     }
 }
 
+
+int getId( string names[], int id[], int size, string target)
+{
+    int i;
+    string check;
+    for( i = 0; i < size; i++)
+    {
+        sortByNames( names, id, size);
+        check = names[i];
+        if( check == target)
+        {
+            return id[i];
+        }
+    }
+    return -1;
+}
+
+
     

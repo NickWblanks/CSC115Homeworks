@@ -9,3 +9,5 @@ using namespace std;
 void sortById( string names[], int id[], int size);
 
 void sortByNames( string names[], int id[], int size);
+
+int getId( string names[], int id[], int size, string target);
