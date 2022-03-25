@@ -16,7 +16,7 @@ TEST_CASE( "sortById - testing basic data set. Checking if id values are sorted.
 
 TEST_CASE( "sortById - testing larger data set")
 {
-    int id[] = {9, 8, 7 , 6, 5, 4, 3, 2, 1};
+    int id[9] = {9, 8, 7 , 6, 5, 4, 3, 2, 1};
     string names[9] = {"Pluto", "Neptune", "Uranus", "Saturn", "Jupiter", "Mars", "Earth", "Venus", "Mercury"};
     sortById( names, id, 9);
     CHECK( id[0] == 1);
@@ -25,5 +25,16 @@ TEST_CASE( "sortById - testing larger data set")
     CHECK( names[0] == "Mercury");
     CHECK( names[1] == "Venus");
     CHECK( names[8] == "Pluto");
+}
+
+TEST_CASE( "sortByName - testing small set, checking names, all lowercase")
+{
+    int id[5] = { 2, 3, 1, 5, 4};
+    string names[5] = {"ziva", "barbie", "joan", "kelly", "abby"};
+    sortByNames( names, id, 5);
+    CHECK( names[0] == "abby");
+    CHECK( names[4] == "ziva");
+    CHECK( id[0] == 4);
+    CHECK( id[4] == 2);
 }
 
