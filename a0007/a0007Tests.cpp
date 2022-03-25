@@ -60,4 +60,15 @@ TEST_CASE( "getId - testing small set, checking if it works")
     CHECK( id[0] == 44);
 }
 
+TEST_CASE( "getId - testing larger data set, checking boundaries")
+{
+    int id[8] = { 8, 7, 6, 5, 4, 3, 2, 1};
+    string names[8] = {"zombie", "witch", "troll", "skeleton", "monster", "hydra", "fairy", "dragon"};
+    int ID = getId( names, id, 8, "dragon");
+    CHECK( ID == 1);
+    CHECK( names[0] == "dragon");
+    CHECK( names[7] == "zombie");
+    CHECK( id[0] == 1);
+    CHECK( id[7] == 8);
+}
 
