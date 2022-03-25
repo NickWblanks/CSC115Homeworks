@@ -38,3 +38,15 @@ TEST_CASE( "sortByName - testing small set, checking names, all lowercase")
     CHECK( id[4] == 2);
 }
 
+
+TEST_CASE( "sortByName - testing larger set, checking uppercase")
+{
+    int id[9] = {9, 8, 7 , 6, 5, 4, 3, 2, 1};
+    string names[9] = {"Pluto", "Neptune", "Uranus", "Saturn", "Jupiter", "Mars", "Earth", "Venus", "Mercury"};
+    sortByNames( names, id, 9);
+    CHECK( names[0] == "Earth");
+    CHECK( names[8] == "Venus");
+    CHECK( id[0] == 3);
+    CHECK( id[8] == 2);
+}
+
