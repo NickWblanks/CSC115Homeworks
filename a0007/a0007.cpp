@@ -49,7 +49,7 @@ int getID( string names[], int id[], int size, string target)
     string check;
     for( i = 0; i < size; i++)
     {
-        sortByNames( names, id, size);
+        sortByName( names, id, size);
         check = names[i];
         if( check == target)
         {
@@ -66,7 +66,7 @@ string getName( string names[], int id[], int size, int target)
     int check;
     for( i = 0; i < size; i++)
     {
-        sortById( names, id, size);
+        sortByID( names, id, size);
         check = id[i];
         if( check == target)
         {
@@ -76,6 +76,3 @@ string getName( string names[], int id[], int size, int target)
     return "";
 }
 
-
-
-    
