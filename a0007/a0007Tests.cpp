@@ -54,7 +54,7 @@ TEST_CASE( "getId - testing small set, checking if it works")
 {
     int id[4] = {11, 22, 33, 44};
     string names[4] = {"one", "two", "three", "four"};
-    int ID = getId( names, id, 4, "three");
+    int ID = getID( names, id, 4, "three");
     CHECK( ID == 33);
     CHECK( names[0] == "four");
     CHECK( id[0] == 44);
@@ -64,11 +64,28 @@ TEST_CASE( "getId - testing larger data set, checking boundaries")
 {
     int id[8] = { 8, 7, 6, 5, 4, 3, 2, 1};
     string names[8] = {"zombie", "witch", "troll", "skeleton", "monster", "hydra", "fairy", "dragon"};
-    int ID = getId( names, id, 8, "dragon");
+    int ID = getID( names, id, 8, "dragon");
     CHECK( ID == 1);
     CHECK( names[0] == "dragon");
     CHECK( names[7] == "zombie");
     CHECK( id[0] == 1);
     CHECK( id[7] == 8);
 }
+
+TEST_CASE( "getID - testing data not found, should return -1")
+{
+    int id[5] = {92, 74, 65, 43, 12};
+    string names[5] = {"Bill", "Bob", "Joe", "Caitlyn", "Sandra"};
+    int ID = getID( names, id, 5, "James");
+    REQUIRE( ID == -1);
+}
+
+TEST_CASE( "getName - testing data nout found should return -1")
+{
+    int id[4] = {78, 59, 12, 34};
+    string names[4] = {"Danny", "Sam", "Lilly", "Robert"};
+    string person = getName( names, id, 4, 32);
+    REQUIRE( person == "");
+}
+
 

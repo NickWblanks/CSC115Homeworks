@@ -10,4 +10,6 @@ void sortById( string names[], int id[], int size);
 
 void sortByNames( string names[], int id[], int size);
 
-int getId( string names[], int id[], int size, string target);
+int getID( string names[], int id[], int size, string target);
+
+string getName( string names[], int id[], int size, int target);
