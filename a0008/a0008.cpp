@@ -77,14 +77,14 @@ void fixList( string mixed[], string firstLast[], string lastFirst[], string ema
         fullName = lastFirst[j];
         splitNameLF( fullName, firstName, lastName);
         lastFirst[j] = fullName;
-        cout << lastFirst[j] << endl;
+        //cout << lastFirst[j] << endl;
     }
     for( k = 0; k < size; k++)
     {
         fullName = firstLast[k];
         splitNameFL( fullName, firstName, lastName);
         firstLast[k] = fullName;
-        cout << firstLast[k] << endl;
+        //cout << firstLast[k] << endl;
     }
     for( i = 0; i < size; i++)
     {

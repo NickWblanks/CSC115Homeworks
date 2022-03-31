@@ -105,6 +105,25 @@ TEST_CASE( "fixList - simple array, testing if it all works")
     CHECK( email[3] == "Robert.Banks@Goober.com");
 }
 
+TEST_CASE( "fixList - having fun, testing larger array")
+{
+    string mixed[8] = {"ObiWan Kenobi", "Windu, Mace", "Palpatine, Emporer", "Wedge Antilles", "Darth Vader", "Skywalker, Luke", "Solo, Han", "Star Destroyer"};
+    string firstLast[8];
+    string lastFirst[8];
+    string email[8];
+    string domain = "StarWarsguys.fake";
+    fixList( mixed, firstLast, lastFirst, email, 8, domain);
+    CHECK( firstLast[0] == "ObiWan Kenobi");
+    CHECK( firstLast[1] == "Mace Windu");
+    CHECK( firstLast[7] == "Star Destroyer");
+    CHECK( lastFirst[0] == "Kenobi, ObiWan");
+    CHECK( lastFirst[1] == "Windu, Mace");
+    CHECK( lastFirst[7] == "Destroyer, Star");
+    CHECK( email[0] == "ObiWan.Kenobi@StarWarsguys.fake");
+    CHECK( email[4] == "Darth.Vader@StarWarsguys.fake");
+    CHECK( email[5] == "Luke.Skywalker@StarWarsguys.fake");
+}
+
 
     
 
