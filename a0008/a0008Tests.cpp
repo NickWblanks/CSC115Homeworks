@@ -87,6 +87,25 @@ TEST_CASE( "createEMail - Grim Reaper, Death.net, should return Grim.Reaper@Deat
     REQUIRE( email == "Grim.Reaper@Death.net");
 }
 
+TEST_CASE( "fixList - simple array, testing if it all works")
+{
+    string mixed[4] = {"Grim Reaper", "Candy, King", "Blue Jay", "Banks, Robert"};
+    string firstLast[4];
+    string lastFirst[4];
+    string email[4];
+    string domain = "Goober.com";
+    fixList( mixed, firstLast, lastFirst, email, 4, domain);
+    CHECK( mixed[0] == "Grim Reaper");
+    CHECK( mixed[3] == "Banks, Robert");
+    CHECK( firstLast[0] == "Grim Reaper");
+    CHECK( firstLast[3] == "Robert Banks");
+    CHECK( lastFirst[0] == "Reaper, Grim");
+    CHECK( lastFirst[3] == "Banks, Robert");
+    CHECK( email[0] == "Grim.Reaper@Goober.com");
+    CHECK( email[3] == "Robert.Banks@Goober.com");
+}
+
+
     
 
     

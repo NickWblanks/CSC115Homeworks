@@ -56,3 +56,48 @@ string createEmail( string firstName, string lastName, string domain)
 }
 
 
+void fixList( string mixed[], string firstLast[], string lastFirst[], string email[], int size, string domain)
+{
+    int i;
+    int j;
+    int k;
+    string eList;
+    string first;
+    string last;
+    string fullName;
+    string firstName;
+    string lastName;
+    for( i = 0; i < size; i++)
+    {
+        firstLast[i] = mixed[i];
+        lastFirst[i] = mixed[i];
+    }
+    for( j = 0; j < size; j++)
+    {
+        fullName = lastFirst[j];
+        splitNameLF( fullName, firstName, lastName);
+        lastFirst[j] = fullName;
+        cout << lastFirst[j] << endl;
+    }
+    for( k = 0; k < size; k++)
+    {
+        fullName = firstLast[k];
+        splitNameFL( fullName, firstName, lastName);
+        firstLast[k] = fullName;
+        cout << firstLast[k] << endl;
+    }
+    for( i = 0; i < size; i++)
+    {
+        fullName = firstLast[i];
+        splitNameLF( fullName, firstName, lastName);
+        first = firstName;
+        last = lastName;
+        eList = createEmail( first, last, domain);
+        email[i] = eList;
+    }
+}
+
+
+
+    
+
