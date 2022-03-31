@@ -8,3 +8,5 @@
 using namespace std;
 
 void splitNameLF( string &fullName, string &firstName, string &lastName);
+
+void splitNameFL( string &fullName, string &firstName, string &lastName);
