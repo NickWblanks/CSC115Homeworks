@@ -78,6 +78,15 @@ TEST_CASE( "creatEmail - Monty Python, yahoo.com, should return Monty.Python@yah
     REQUIRE( email == "Monty.Python@Yahoo.com");
 }
 
+TEST_CASE( "createEMail - Grim Reaper, Death.net, should return Grim.Reaper@Death.net")
+{
+    string firstName = "Grim";
+    string lastName = "Reaper";
+    string domain = "Death.net";
+    string email = createEmail( firstName, lastName, domain);
+    REQUIRE( email == "Grim.Reaper@Death.net");
+}
+
     
 
     
