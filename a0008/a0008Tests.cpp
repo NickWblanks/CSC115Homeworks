@@ -24,3 +24,27 @@ TEST_CASE( "splitNameLF - Monty Python - first is Monty last is Python, full nam
     CHECK( firstName == "Monty");
 }
 
+
+TEST_CASE( "splitNameLF - King Arthur, should return Arthur, King.")
+{
+    string fullName = "King Arthur";
+    string firstName;
+    string lastName;
+    splitNameLF( fullName, firstName, lastName);
+    CHECK( fullName == "Arthur, King");
+    CHECK( lastName == "Arthur");
+    CHECK( firstName == "King");
+}
+
+TEST_CASE( "splitNameLF - Doe, John, should return Doe, John")
+{
+    string fullName = "Doe, John";
+    string firstName;
+    string lastName;
+    splitNameLF( fullName, firstName, lastName);
+    CHECK( fullName == "Doe, John");
+    CHECK( firstName == "John");
+    CHECK( lastName == "Doe");
+}
+
+    
