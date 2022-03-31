@@ -58,4 +58,17 @@ TEST_CASE( "splitNameFL - Doe, John, should return John Doe")
     CHECK( lastName == "Doe");
 }
 
+TEST_CASE( "splitNameFL - Monty Python, should return Monty Python")
+{
+    string fullName = "Monty Python";
+    string firstName;
+    string lastName;
+    splitNameFL( fullName, firstName, lastName);
+    CHECK( fullName == "Monty Python");
+    CHECK( firstName == "Monty");
+    CHECK( lastName == "Python");
+}
+
+    
+
     
