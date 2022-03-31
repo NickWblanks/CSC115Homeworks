@@ -69,6 +69,15 @@ TEST_CASE( "splitNameFL - Monty Python, should return Monty Python")
     CHECK( lastName == "Python");
 }
 
+TEST_CASE( "creatEmail - Monty Python, yahoo.com, should return Monty.Python@yahoo.com")
+{
+    string firstName = "Monty";
+    string lastName = "Python";
+    string domain = "Yahoo.com";
+    string email = createEmail( firstName, lastName, domain);
+    REQUIRE( email == "Monty.Python@Yahoo.com");
+}
+
     
 
     

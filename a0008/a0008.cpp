@@ -48,3 +48,11 @@ void splitNameFL( string &fullName, string &firstName, string &lastName)
 }
 
 
+string createEmail( string firstName, string lastName, string domain)
+{
+    string email;
+    email = firstName + "." + lastName + "@" + domain;
+    return email;
+}
+
+
