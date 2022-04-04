@@ -11,3 +11,24 @@ TEST_CASE( "swapStrings - testing basic string to see if they swap.")
     CHECK( strcmp( str1, "John") == 0);
 }
 
+
+TEST_CASE( "swapStrings - testing strings of different lengths")
+{
+    char str1[100] = "Thomas the Tank";
+    char str2[100] = "Ben the Bullet";
+    swapStrings( str1, str2);
+    CHECK( strcmp( str2, "Thomas the Tank") == 0);
+    CHECK( strcmp( str1, "Ben the Bullet") == 0);
+}
+
+
+TEST_CASE( "swapStrings - testing longer strings")
+{
+    char str1[100] = "Abbot";
+    char str2[100] = "Ford";
+    swapStrings( str1, str2);
+    CHECK( strcmp( str2, "Abbot") == 0);
+    CHECK( strcmp( str1, "Ford") == 0);
+}
+
+
