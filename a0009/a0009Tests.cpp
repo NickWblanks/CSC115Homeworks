@@ -32,3 +32,12 @@ TEST_CASE( "swapStrings - testing longer strings")
 }
 
 
+TEST_CASE( "sortOrder - testing small string, anne should be in array[0]")
+{
+    char array[4][21] = {"Liz", "Harry", "Ben", "Anne"};
+    sortOrder( array, 4);
+    CHECK( strcmp( array[0], "Anne") == 0);
+    CHECK( strcmp( array[3], "Liz") == 0);
+}
+
+

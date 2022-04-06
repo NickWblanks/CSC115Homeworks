@@ -21,3 +21,22 @@ void swapStrings( char str1[100], char str2[100])
     }
 }
 
+
+void sortOrder( char array[][21], int list)
+{
+    int i;
+    int j;
+    bool swapped = true;
+    for( i = 0; i < list - 1 && swapped == true; i++)
+    {
+        swapped = false;
+        for( j = 0; j < list - 1 - i; j++)
+        {
+            if( strcmp( array[j], array[j + 1]) > 0)
+            {
+                swapStrings( array[j], array[j + 1]);
+                swapped = true;
+            }
+        }
+    }
+}
