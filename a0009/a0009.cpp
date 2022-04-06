@@ -47,20 +47,24 @@ void sortLen( char array[][21], int list)
     int i;
     int j;
     int min;
-    int length1;
-    int length2;
+    int len1;
+    int len2;
     for( i = 0; i < list; i++)
     {
-        min = i;
-        length1 = strlen( array[min]);
-        length2 = strlen( array[i + 1]);
+        min = i;     
         for( j = i + 1; j < list; j++)
         {
-            if( length1 > length2)
+            len1 = strlen( array[min]);
+            len2 = strlen( array[j]);   
+            //cout << len1 << " " << len2 << endl;
+            if( len2 < len1)
             {
                 min = j;
             }
-            swapStrings( array[i], array[min]);
         }
+        swapStrings( array[i], array[min]);
+        cout << array[i] << endl;
     }
 }
+
+            

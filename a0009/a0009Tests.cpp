@@ -89,3 +89,23 @@ TEST_CASE( "sortLen - testing bigger data set, all over the place")
     CHECK( strcmp( array[7], "The Incredibles") == 0);
 }
 
+TEST_CASE( "sortLen - Testing larger data set, all over")
+{
+    char array[6][21] = {"John", "Joey", "KingPin", "SuperMan", "VanHalen", "Super Mario"};
+    sortLen( array, 6);
+    CHECK( strcmp( array[0], "John") == 0);
+    CHECK( strcmp( array[5], "Super Mario") == 0);
+}
+
+TEST_CASE( "sortLen - testing weird data set.")
+{
+    char array[7][21] = {"Liberator", "Thomas", "SpiderVerse", "Pacific Rim", "Viking", "Banshee", "Sentinel"};
+    sortLen( array, 7);
+    CHECK( strcmp( array[0], "Thomas") == 0);
+    CHECK( strcmp( array[1], "Viking") == 0);
+    CHECK( strcmp( array[6], "Pacific Rim") == 0);
+    CHECK( strcmp( array[5], "SpiderVerse") == 0);
+}
+
+
+
