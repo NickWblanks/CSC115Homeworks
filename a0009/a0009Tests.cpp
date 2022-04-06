@@ -70,4 +70,24 @@ TEST_CASE( "sortLen - testing small data set, first and last need to swap.")
 }
 
 
+TEST_CASE( "sortLen - testing small data set, it is all in order")
+{
+    char array[6][21] = {"one", "twos", "three", "Fours4", "fives55", "sixes666"};
+    sortLen( array, 6);
+    CHECK( strcmp( array[0], "one") == 0);
+    CHECK( strcmp( array[1], "twos") == 0);
+    CHECK( strcmp( array[4], "fives55") == 0);
+    CHECK( strcmp( array[5], "sixes666") == 0);
+}
+
+
+TEST_CASE( "sortLen - testing bigger data set, all over the place")
+{
+    char array[8][21] = {"The Incredibles", "Die Hard", "Shark Tales", "Iron Man 2", "G.I. Joe", "Velocipastor", "Beetlejuice", "GeForce"};
+    sortLen( array, 8);
+    CHECK( strcmp( array[0], "GeForce") == 0);
+    CHECK( strcmp( array[7], "The Incredibles") == 0);
+}
+
+
 
