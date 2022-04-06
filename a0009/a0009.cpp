@@ -64,4 +64,3 @@ void sortLen( char array[][21], int list)
         }
     }
 }
-

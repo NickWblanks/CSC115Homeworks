@@ -89,5 +89,3 @@ TEST_CASE( "sortLen - testing bigger data set, all over the place")
     CHECK( strcmp( array[7], "The Incredibles") == 0);
 }
 
-
-
