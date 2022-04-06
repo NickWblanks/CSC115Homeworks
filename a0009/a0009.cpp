@@ -32,7 +32,7 @@ void sortOrder( char array[][21], int list)
         swapped = false;
         for( j = 0; j < list - 1 - i; j++)
         {
-            if( strcmp( array[j], array[j + 1]) > 0)
+            if( strncmp( array[j], array[j + 1], 21) > 0)
             {
                 swapStrings( array[j], array[j + 1]);
                 swapped = true;
@@ -40,3 +40,28 @@ void sortOrder( char array[][21], int list)
         }
     }
 }
+
+
+void sortLen( char array[][21], int list)
+{
+    int i;
+    int j;
+    int min;
+    int length1;
+    int length2;
+    for( i = 0; i < list; i++)
+    {
+        min = i;
+        length1 = strlen( array[min]);
+        length2 = strlen( array[i + 1]);
+        for( j = i + 1; j < list; j++)
+        {
+            if( length1 > length2)
+            {
+                min = j;
+            }
+            swapStrings( array[i], array[min]);
+        }
+    }
+}
+

@@ -9,3 +9,5 @@ using namespace std;
 void swapStrings( char str1[100], char str2[100]);
 
 void sortOrder( char array[][21], int list);
+
+void sortLen( char array[][21], int list);

@@ -41,3 +41,33 @@ TEST_CASE( "sortOrder - testing small string, anne should be in array[0]")
 }
 
 
+TEST_CASE( "sortOrder - testing larger data set, the data set is already sorted")
+{
+    char array[6][21] = {"Barry", "Carl", "Jim", "Sam", "Tom", "Zeus"};
+    sortOrder( array, 6);
+    CHECK( strcmp( array[0], "Barry") == 0);
+    CHECK( strcmp( array[5], "Zeus") == 0);
+}
+
+
+TEST_CASE( "sortOrder - testing larger data set, stuff is all out of order")
+{
+    char array[8][21] = {"Luis", "Santa", "Grim", "Spiderman", "Batman", "Jiffylube", "Metamorph", "Andy"};
+    sortOrder( array, 8);
+    CHECK( strcmp( array[0], "Andy") == 0);
+    CHECK( strcmp( array[1], "Batman") == 0);
+    CHECK( strcmp( array[2], "Grim") == 0);
+    CHECK( strcmp( array[3], "Jiffylube") == 0);
+    CHECK( strcmp( array[7], "Spiderman") == 0);
+}
+
+TEST_CASE( "sortLen - testing small data set, first and last need to swap.")
+{
+    char array[5][21] = {"Babybackribs", "Dollar", "Keep", "Simple", "One"};
+    sortLen( array, 5);
+    CHECK( strcmp( array[0], "One") == 0);
+    CHECK( strcmp( array[4], "Babybackribs") == 0);
+}
+
+
+
