@@ -2,7 +2,7 @@
 #include "..\\catch.hpp"
 #include "a0010.h"
 
-const bool RUNCATCH = true;
+const bool RUNCATCH = false;
 
 int main()
 {
