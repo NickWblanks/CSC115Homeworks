@@ -28,8 +28,10 @@ int main()
     sortArray( array, integers);
     cout << "Quantity: " << integers << endl;
     int min = array[0];
-    int max = array[integers];
-    cout << "Range: " << min << "to " << max << endl;
+    int max = array[integers - 1];
+    cout << "Range: " << min << " to " << max << endl;
+    int sum = sumArray( array, integers);
+    cout << "Sum: " << sum << endl;
 }
 
 TEST_CASE( "sortArray - testing small set for basis")
@@ -42,3 +44,12 @@ TEST_CASE( "sortArray - testing small set for basis")
     CHECK( array[3] == 4);
     CHECK( array[4] == 5);
 }
+
+TEST_CASE( "sumArray - testing small set for workability")
+{
+    int array[5] = {5, 4, 3, 2, 1};
+    int sum = sumArray( array, 5);
+    REQUIRE( sum == 15);
+}
+
+    

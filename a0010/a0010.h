@@ -8,3 +8,6 @@
 using namespace std;
 
 void sortArray(int array[], int size);
+
+int sumArray( int array[], int size);
+

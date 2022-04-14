@@ -19,3 +19,13 @@ void sortArray( int array[], int size)
     }
 }
 
+int sumArray( int array[], int size)
+{
+    int i;
+    int sum = 0;
+    for( i = 0; i <= size -1; i++)
+    {
+        sum = (array[i]) + sum;
+    }
+    return sum;
+}
